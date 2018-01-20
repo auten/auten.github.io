@@ -128,7 +128,7 @@
 			// Add panel
 			this.panel = document.createElement('center');
 			this.dbgBtn = document.createElement('button');
-			this.dbgBtn.innerHTML = 'Toggle debug drawing';
+			this.dbgBtn.innerHTML = 'Toggle debug drawing (the red stuff)';
 			this.dbgBtn.style.float = 'none';
 			this.dbgBtn.style.fontFamily = 'Ubuntu';
 			this.dbgBtn.onclick = () => window.rai.opts.draw = !window.rai.opts.draw;
