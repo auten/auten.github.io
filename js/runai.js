@@ -14,14 +14,14 @@
 			ctx.fillStyle = 'red';
 			for (var i = 0; i < this.hor.obstacles.length; ++i) {
 				// Calculate line positions
-				var o = this.hor.obstacles[i];
-				var ox = this.hor.obstacles[i].xPos;
-				var oy = this.hor.obstacles[i].yPos;
-				var ow = this.hor.obstacles[i].width;
-				var oh = this.hor.obstacles[i].size * 15;
-				var endX = ox + (ow / 2);
-				var endY = oy + (oh / 2);
-				var cactusName = RunAI.cactusMap[o.typeConfig.type];
+				var o = this.hor.obstacles[i],
+					ox = this.hor.obstacles[i].xPos,
+					oy = this.hor.obstacles[i].yPos,
+					ow = this.hor.obstacles[i].width,
+					oh = this.hor.obstacles[i].size * 15,
+					endX = ox + (ow / 2),
+					endY = oy + (oh / 2),
+					cactusName = RunAI.cactusMap[o.typeConfig.type];
 				// Render line
 				ctx.save();
 				ctx.lineWidth = 1.5;
@@ -34,15 +34,15 @@
 				ctx.font = '12px Ubuntu';
 				var txt = 'Distance (' +
 					(Math.max(Math.ceil((ox - this.rex.xPos) * 100) / 100, 2.8)) + ", " + (oy - this.rex.yPos) +
-					") / size " + (o.size);
-				var fontX = endX - (txt.length * 2);
-				var fontY = endY - 25;
+					") / size " + (o.size),
+					fontX = endX - (txt.length * 2),
+					fontY = endY - 25;
 				ctx.fillText(txt, fontX, fontY);
 				// Render collision boxes
 				ctx.lineWidth = 1;
 				for (var j = 0; j < o.collisionBoxes.length; ++j) {
-					var box = o.collisionBoxes[j];
-					var x = ox + box.x,
+					var box = o.collisionBoxes[j],
+						x = ox + box.x,
 						y = oy + box.y,
 						w = box.width,
 						h = box.height;
@@ -51,8 +51,8 @@
 			}
 			// Render some extra text on the top left
 			ctx.font = '12px Ubuntu';
-			var fx = 5;
-			var fy = 10;
+			var fx = 5,
+				fy = 10;
 			if (!this.runner.crashed) {
 				var txt = 'obstacles: ' + (this.hor.obstacles.length) + ' pos: (' + (this.rex.xPos) + ', ' + (this.rex.yPos) + ')';
 				txt += ' speed: ' + (Math.max(Math.ceil(this.runner.currentSpeed * 100) / 100, 2.8));
